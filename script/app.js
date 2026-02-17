@@ -54,6 +54,49 @@ const loadCategoryProducts = async (category) => {
   showCategoryProducts(data);
 };
 
+// Loading product Details
+
+const loadProductDetails = async (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  console.log(data);
+  showProductDetails(data);
+};
+
+// Showing Product details
+
+const showProductDetails = (product) => {
+  const detailsModal = document.getElementById("details-container");
+  detailsModal.innerHTML = "";
+
+  document.getElementById("details_modal").showModal();
+  const modalDiv = document.createElement("div");
+
+  modalDiv.innerHTML = `
+    <div class="p-5">
+            <div class="mb-6"><img src=${product.image} alt=""></div>
+            <div class="badge badge-soft badge-primary">${product.category}</div>
+            <h1 class="text-xl font-bold my-2">${product.title}</h1>
+            <p class="text-sm text-gray-500"><span class="text-lg text-green-500 font-bold">About Product: </span> ${product.description}</p>
+            <div class="my-4 ">
+                <h2 class="text-2xl font-bold my-2">$ ${product.price} </h2>
+                <h2 class="text-yellow-400"><i class="fa-solid fa-star text-yellow-400"></i>${product.rating.rate} </h2>
+                <h2 class="text-lg font-bold my-2">Total Ratings: ${product.rating.count} </h2>
+                
+            </div>
+            <div class="my-5 space-x-3">
+                <button class="btn rounded-md btn-neutral">Buy Now</button>
+                <button class="btn rounded-md btn btn-primary">Add To Card</button>
+            </div>
+
+        </div>
+    `;
+  detailsModal.appendChild(modalDiv);
+};
+
 // showing trending Products
 
 const showTendingProducts = (products) => {
@@ -82,7 +125,7 @@ const showTendingProducts = (products) => {
                         <h3 class="my-1 text-lg font-semibold" title= ${product.title}>${product.title.slice(0, 20)}...</h3>
                         <h2 class="my-1 text-xl font-bold">$${product.price}</h2>
                         <div class="space-x-6 my-3 flex items-center justify-center">
-                            <button class="btn "><i class="fa-solid fa-circle-info"></i>Details</button>
+                            <button class="btn " onclick="loadProductDetails(${product.id})"><i class="fa-solid fa-circle-info"></i>Details</button>
                             <button class="btn btn-primary "><i class="fa-solid fa-cart-shopping "></i>Add</button>
                         </div>
 
@@ -134,7 +177,7 @@ const ShowAllProducts = (products) => {
                         <h3 class="my-1 text-lg font-semibold" title= ${product.title}>${product.title.slice(0, 20)}...</h3>
                         <h2 class="my-1 text-xl font-bold">$${product.price}</h2>
                         <div class="space-x-6 my-3 flex items-center justify-center lg:gap-6">
-                            <button class="btn "><i class="fa-solid fa-circle-info"></i>Details</button>
+                            <button class="btn " onclick="loadProductDetails(${product.id})"><i class="fa-solid fa-circle-info"></i>Details</button>
                             <button class="btn btn-primary "><i class="fa-solid fa-cart-shopping "></i>Add</button>
                         </div>
 
@@ -168,7 +211,7 @@ const showCategoryProducts = (products) => {
                         <h3 class="my-1 text-lg font-semibold" title= ${product.title}>${product.title.slice(0, 20)}...</h3>
                         <h2 class="my-1 text-xl font-bold">$${product.price}</h2>
                         <div class="space-x-6 my-3 flex items-center justify-center lg:gap-6">
-                            <button class="btn "><i class="fa-solid fa-circle-info"></i>Details</button>
+                            <button class="btn " onclick="loadProductDetails('${product.id}')"><i class="fa-solid fa-circle-info"></i>Details</button>
                             <button class="btn btn-primary "><i class="fa-solid fa-cart-shopping "></i>Add</button>
                         </div>
 
@@ -182,5 +225,5 @@ const showCategoryProducts = (products) => {
 
 // --------------------------------------------mmk-
 loadLabels();
-ShowAllProducts();
+loadAllProduct();
 loadTrendingProducts();
