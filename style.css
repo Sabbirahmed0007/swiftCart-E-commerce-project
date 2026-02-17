@@ -1,12 +1,12 @@
-.active {
-  color: blueviolet;
-  outline: 1px solid blueviolet;
-}
-
 * {
   font-family: "Inter", sans-serif;
 }
 
 .font-poppins {
   font-family: "Poppins", sans-serif;
+}
+
+.active {
+  color: blueviolet !important;
+  outline: 1px solid blueviolet !important;
 }

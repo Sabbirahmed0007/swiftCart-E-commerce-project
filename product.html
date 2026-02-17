@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftCart</title>
+    <title>Product | SwiftCart</title>
     <!-- Css -->
     <link rel="stylesheet" href="./style.css">
 
@@ -27,7 +27,8 @@
 
 </head>
 
-<body class="max-w-screen-2xl mx-auto">
+<body>
+
     <header>
         <!-- Navbar -->
         <nav>
@@ -38,8 +39,8 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
-                        <li><a class="nav-tab capitalize font-semibold" href="index.html">Home</a></li>
-                        <li><a class="nav-tab capitalize font-semibold" href="product.html">product</a></li>
+                        <li><a href="index.html" class="nav-tab capitalize font-semibold">Home</a></li>
+                        <li><a href="product.html" class="nav-tab capitalize font-semibold">product</a></li>
                         <li><a class="nav-tab capitalize font-semibold">About</a></li>
                         <li><a class="nav-tab capitalize font-semibold">Contact</a></li>
                     </ul>
@@ -68,79 +69,20 @@
             </div>
 
         </nav>
-
-        <!-- Banner Section -->
-        <section>
-            <div class="hero min-h-screen relative" style="background-image: url('./Assets/banner-image.png');">
-                <div class="hero-overlay bg-gradient-to-r from-gray-900 via-transparent to-transparent"></div>
-                <div class="hero-content text-neutral-content text-left ">
-                    <div class="  p-10 text-left absolute lg:left-28 ">
-                        <h1 class="mb-5 text-5xl font-bold">Best Collection For You</h1>
-                        <p class="mb-5">
-                            Discover the latest trends in fashion, electronics, and more with confidence and style at
-                            SwiftCart
-                        </p>
-                        <button class="btn btn-primary">Shop now</button>
-                    </div>
-                </div>
-            </div>
-        </section>
     </header>
 
-    <!-- Main body section -->
     <main>
 
-        <!-- Our Services  -->
-        <section class=" my-10 text-center font-poppins">
-            <h2 class="font-poppins text-xl md:text-2xl font-bold">Why Choose Us</h2>
-            <p class="text-gray-500 my-2">We Provide the best shopping experience with top-notch sercives</p>
-            <div
-                class="bg-gray-100 w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-10 box-border my-4 rounded-md gap-10">
-                <div class=" bg-white p-4 box-border relative text-left rounded-md">
-                    <i class="fa-regular fa-truck text-violet-600 bg-sky-200 text-2xl absolute -top-3  rounded "></i>
-                    <h3 class="text-lg font-semibold my-4">Fast Delivery</h3>
-                    <p class="text-gray-500 my-3">Get your orders delivered to your doorstep quickly and efficiently.
-                    </p>
-                </div>
-                <div class=" bg-white p-4 box-border relative text-left rounded-md">
-                    <i
-                        class="fa-regular fa-headphones text-violet-600 bg-sky-200 text-2xl absolute -top-3  rounded "></i>
-                    <h3 class="text-lg font-semibold my-4">24/7 Support</h3>
-                    <p class="text-gray-500 my-3"> our support team is avaiable around the clock to assist you.
-                    </p>
-                </div>
-                <div class=" bg-white p-4 box-border relative text-left rounded-md">
-                    <i class="fa-solid fa-shield text-violet-600 bg-sky-200 text-2xl absolute -top-3  rounded "></i>
-                    <h3 class="text-lg font-semibold my-4">Secure Payment</h3>
-                    <p class="text-gray-500 my-3">Experience safe and secure transaction with our encrypted payment
-                        systems.
-                    </p>
-                </div>
-                <div class=" bg-white p-4 box-border relative text-left rounded-md">
-                    <i
-                        class="fa-solid fa-arrows-rotate text-violet-600 bg-sky-200 text-2xl absolute -top-3  rounded "></i>
-                    <h3 class="text-lg font-semibold my-4">Easy Return</h3>
-                    <p class="text-gray-500 my-3">Not satisfied? Return your products easily within 30 days.
-                    </p>
-                </div>
-            </div>
+        <section class=" my-5">
+            <h1 class="text-3xl font-bold text-center">Our Products</h1>
 
-        </section>
-
-        <!-- Trending section -->
-
-        <section class="my-10 w-3/5 md:w-4/5  mx-auto font-poppins">
-            <h1 class="text-xl lg:text-2xl font-bold">Trending Now <i class="fa-solid fa-fire-flame-curved"></i></h1>
-            <div id="trending-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-8 gap-10 lg:gap-6">
-
-
-
+            <div id="label-container" class="flex items-center gap-3 flex-wrap my-5 justify-center">
+                <button class="btn btn-outline btn-primary lession-btn rounded-4xl"> Category</button>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer section -->
 
     <footer class="text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-sky-950 text-base-content p-10 gap-5">
         <nav class="my-3">
@@ -186,11 +128,7 @@
 
 
 
-
-
-
     <script src="./script/app.js"></script>
-
 </body>
 
 </html>
